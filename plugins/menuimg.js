@@ -1,41 +1,20 @@
-import fs from 'fs'
+import fs, { promises } from 'fs'
 import fetch from 'node-fetch'
-import jimp from 'jimp'
-import { fileURLToPath } from 'url'
-import { createRequire } from 'module'
-import moment from 'moment-timezone'
-import { join, dirname } from 'path'
-import ct from 'countries-and-timezones'
-import { parsePhoneNumber } from 'libphonenumber-js'
-
-let handler = async (m, { conn, usedPrefix: _p, text, command }) => {
-let editMenu = global.db.data.chats[m.chat].editMenu
-let fechaMoment, formatDate, nombreLugar, ciudad = null
-const phoneNumber = '+' + m.sender
-const parsedPhoneNumber = parsePhoneNumber(phoneNumber)
-const countryCode = parsedPhoneNumber.country
-const countryData = ct.getCountry(countryCode)
-const timezones = countryData.timezones
-const zonaHoraria = timezones.length > 0 ? timezones[0] : 'UTC'; moment.locale('es')
-let lugarMoment = moment().tz(zonaHoraria)
-if (lugarMoment) { fechaMoment = lugarMoment.format('llll [(]a[)]')
-formatDate = fechaMoment.charAt(0).toUpperCase() + fechaMoment.slice(1)
-nombreLugar = countryData.name; const partes = zonaHoraria.split('/')
-ciudad = partes[partes.length - 1].replace(/_/g, ' ')
-} else { 
-lugarMoment = moment().tz('America/Quito')
-fechaMoment = lugarMoment.format('llll [(]a[)]')
-formatDate = fechaMoment.charAt(0).toUpperCase() + fechaMoment.slice(1)
-nombreLugar = 'America'; ciudad = 'Quito' 
-}
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const require = createRequire(__dirname)
-const { name, author, version, description, collaborators } = require(join(__dirname, '../package.json'))
-
-let { money, joincount } = global.db.data.users[m.sender]
+let handler = async (m, { conn, usedPrefix, command }) => {
+if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '⚠ 𝙇𝙊𝙎 𝘾𝙊𝙈𝘼𝙉𝘿𝙊𝙎 +18 𝙀𝙎𝙏𝘼𝙉 𝘿𝙀𝙎𝘼𝘾𝙏𝙄𝙑𝘼𝘿𝙊𝙎 𝙀𝙉 𝙀𝙎𝙏𝙀 𝙂𝙍𝙐𝙋𝙊, 𝙎𝙄 𝙀𝙎 𝘼𝘿𝙈𝙄𝙉 𝙔 𝘿𝙀𝙎𝙀𝘼 𝘼𝘾𝙏𝙄𝙑𝘼𝙍𝙇𝙊𝙎, 𝙐𝙎𝙀 𝙀𝙇 𝘾𝙊𝙈𝘼𝙉𝘿𝙊 .on modohorny'; 
+try {
+let d = new Date(new Date + 3600000)
+let locale = 'es'
+let week = d.toLocaleDateString(locale, { weekday: 'long' })
+let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
+let _uptime = process.uptime() * 1000
+let uptime = clockString(_uptime)
+let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
+let more = String.fromCharCode(8206)
+let readMore = more.repeat(850)   
+let taguser = conn.getName(m.sender)
+let user = global.db.data.users[m.sender]
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-  
 let menu = `╔═════════════════╗
 ┇➤ 𝙃𝙊𝙇𝘼, 𝙃𝙐𝙈𝘼𝙉𝙊 
 ┇ @${m.sender.split("@")[0]}
@@ -211,7 +190,6 @@ let menu = `╔═════════════════╗
 │ ┊➺ 🃏 .𝘤𝘢𝘳𝘵𝘰𝘰𝘯 𝘪𝘮𝘢𝘨𝘦
 │ ┊➺ 🃏 .𝘤𝘢𝘤𝘩𝘰𝘯𝘥𝘢𝘭𝘪𝘤𝘦𝘯𝘤𝘪𝘢
 ╰ ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ ∙ ∙ ∙ ∙
-
 ▸▸ 𝙋𝙊𝙍𝙉𝙊 𝙍𝘼𝙉𝘿𝙊𝙈 ◂◂
 │ ┊➺ 🔞 .𝘯𝘴𝘧𝘸𝘭𝘰𝘭𝘪
 │ ┊➺ 🔞 .𝘯𝘴𝘧𝘸𝘧𝘰𝘰𝘵
@@ -240,8 +218,7 @@ let menu = `╔═════════════════╗
 │ ┊➺ 🔞 .𝘱𝘰𝘳𝘯𝘰
 │ ┊➺ 🔞 .𝘳𝘢𝘯𝘥𝘰𝘮𝘹𝘹𝘹
 │ ┊➺ 🔞 .𝘱𝘦𝘤𝘩𝘰𝘴
-
-▸▸ 𝘽𝙐𝙎𝘾𝘼𝙍 - 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎 ◂◂
+▸ 𝘽𝙐𝙎𝘾𝘼𝙍 - 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎 ◂◂
 │ ┊➺ 🛐 .𝘩𝘦𝘯𝘵𝘢𝘪𝘴𝘦𝘢𝘳𝘤𝘩
 │ ┊➺ 🛐 .𝘱𝘢𝘤𝘬
 │ ┊➺ 🛐 .𝘱𝘢𝘤𝘬2
@@ -278,7 +255,6 @@ let menu = `╔═════════════════╗
 ┊➺ 💡 .𝘪𝘯𝘴𝘵𝘢𝘨𝘳𝘢𝘮 𝘦𝘯𝘭𝘢𝘤𝘦
 ┊➺ 💡 .𝘵𝘸𝘪𝘵𝘵𝘦𝘳𝘹 𝘦𝘯𝘭𝘢𝘤𝘦
 ┊➺ 💡 .𝘴𝘴𝘸𝘦𝘣 𝘦𝘯𝘭𝘢𝘤𝘦
-
 ★ 𝘾𝙊𝙉𝙑𝙀𝙍𝙏𝙄𝘿𝙊𝙍 ★
 ┊➺ 🎭 .𝘪𝘮𝘨 𝘴𝘵𝘪𝘤𝘬𝘦𝘳
 ┊➺ 🎭 .𝘶𝘳𝘭 𝘪𝘮𝘢𝘨𝘦𝘯
@@ -326,7 +302,6 @@ let menu = `╔═════════════════╗
 ┊➺ 🎛️ .𝘦𝘥𝘪𝘵𝘢𝘳𝘴𝘮𝘰𝘰𝘵𝘩
 ┊➺ 🎛️ .𝘦𝘥𝘪𝘵𝘢𝘳𝘵𝘶𝘱𝘢𝘪
 ┊➺ 🎛️ .𝘦𝘥𝘪𝘵𝘢𝘳𝘢𝘶𝘥𝘪𝘰𝟪𝘥
-
 ★ 𝙀𝙁𝙀𝘾𝙏𝙊𝙎 𝘿𝙀 𝘼𝙐𝘿𝙄𝙊 ★
 ┊➺ 🧊 .𝘣𝘢𝘴𝘴
 ┊➺ 🧊 .𝘣𝘭𝘰𝘸𝘯j
@@ -375,63 +350,39 @@ let menu = `╔═════════════════╗
 ┊➺ 🔐 .𝘣𝘤𝘤 𝘵𝘦𝘹𝘵𝘰
 ┊➺ 🔐 .𝘣𝘤𝘨𝘤 𝘵𝘦𝘹𝘵𝘰
 ┊➺ 🔐 .𝘣𝘤 𝘵𝘦𝘹𝘵𝘰
-╰ ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ ∙ ∙`.trim()
+╰ ∙∙∙∙∙∙∙∙∙∙∙∙∙∙
 
-let contextInfo = {
-mentionedJid: await conn.parseMention(menu),
-isForwarded: true,
-forwardingScore: 1,
-forwardedNewsletterMessageInfo: {
-newsletterJid: '120363357113516650@newsletter',
-newsletterName: '𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓/𝙀𝘽𝙂',
-serverMessageId: 100
-}}
+ `.trim()
+    
+const vi = ['https://telegra.ph/file/aa3e11b1cc4246ad72b9b.mp4']
 
-if (editMenu.imagen) {
-await conn.sendMessage(m.chat, { image: { url: yartexImg.getRandom() }, caption: menu, mentions: [m.sender], contextInfo: contextInfo }, { quoted: editMenu.verificado ? fkontak : m })
-} else if (editMenu.video) {
-await conn.sendMessage(m.chat, { video: { url: yartexVid.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender], contextInfo: contextInfo }, { quoted: editMenu.verificado ? fkontak : m })
-} else if (editMenu.dinamico) {
-const mediaFiles = [{ image: { url: yartexImg.getRandom() } }, { video: { url: yartexVid.getRandom(), gifPlayback: true } }]
-let randomMedia = getRandom(mediaFiles)
-await conn.sendMessage(m.chat, { ...randomMedia, caption: menu, mentions: [m.sender], contextInfo: contextInfo }, { quoted: editMenu.verificado ? fkontak : m })
-} else if (editMenu.simple) {
-await conn.sendMessage(m.chat, { text: menu, mentions: [m.sender], contextInfo: contextInfo }, { quoted: editMenu.verificado ? fkontak : m })
-} else if (editMenu.personalizado) {
-let newImg = await cropImageToSquare(editMenu.personalizado)
-await conn.sendMessage(m.chat, { image: newImg, caption: menu, mentions: [m.sender], contextInfo: contextInfo }, { quoted: editMenu.verificado ? fkontak : m })
-} else {
-await conn.sendMessage(m.chat, { video: { url: yartexVid.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender], contextInfo: contextInfo }, { quoted: fkontak })
-}
-}
-//handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|menucompleto|allmenu|allm|m|\?)$/i
-handler.command = ['help', 'menu', 'allmenu'] 
-handler.register = true
-export default handler
-
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
-
-function getRandom(array) {
-return array[Math.floor(Math.random() * array.length)];
-}
-
-async function cropImageToSquare(imageUrl) {
 try {
-let response = await fetch(imageUrl)
-if (!response.ok) {
-return console.log(`Error al descargar la imagen (${response.status} ${response.statusText})`)
-}
-let imageBuffer = await response.buffer()
-let img = await jimp.read(imageBuffer)
-let width = img.getWidth()
-let height = img.getHeight()
-let size = Math.min(width, height)
-let x = (width - size) / 2
-let y = (height - size) / 2
-img.crop(x, y, size, size)
-let croppedBuffer = await img.getBufferAsync(jimp.MIME_PNG)
-return croppedBuffer
+await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
 } catch (error) {
-return console.error('Error:', error)
-}}
+try {
+await conn.sendMessage(m.chat, { image: { url: gataMenu.getRandom() }, gifPlayback: false, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
+} catch (error) {
+try {
+await conn.sendMessage(m.chat, { image: gataImg.getRandom(), gifPlayback: false, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
+} catch (error) {
+try{
+await conn.sendFile(m.chat, imagen5, 'menu.jpg', menu, fkontak, false, { mentions: [m.sender, global.conn.user.jid] })
+} catch (error) {
+return 
+}}}} 
+
+} catch (e) {
+await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)
+console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
+console.log(e)}}
+
+handler.command = /^(menu)$/i
+handler.register = true
+handler.group = true
+export default handler
+    
+function clockString(ms) {
+let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
