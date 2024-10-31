@@ -31,7 +31,7 @@ if (!args[0]) throw `
 ` 
 }
 handler.command = /^(vs4|4vs4)$/i
-handler.register = false
+handler.register = true
 handler.group = true
 handler.admin = true
 export default handler
