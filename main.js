@@ -105,7 +105,7 @@ loadChatgptDB();
 
 global.creds = 'creds.json'
 global.authFile = 'GataBotSession'
-global.authFileJB  = 'GataJadiBot'
+global.authFileJB  = 'EliteBotGlobal'
 global.rutaBot = join(__dirname, authFile)
 global.rutaJadiBot = join(__dirname, authFileJB)
 
