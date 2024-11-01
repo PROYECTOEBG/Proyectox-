@@ -45,7 +45,7 @@ if (args[1]) args[1] = args[1].replace('--code', '').trim()
 if (args[0] == '') args[0] = undefined
 console.log(args[0])}
 if (!fs.existsSync('./EliteBotGlobal/'+ id)){
-fs.mkdirSync('./IgnaJadiBot/'+ id, { recursive: true })}
+fs.mkdirSync('./EliteBotGlobal/'+ id, { recursive: true })}
 args[0] && args[0] != undefined ? fs.writeFileSync('./EliteBotGlobal/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
 
 if (fs.existsSync('./EliteBotGlobal/' + id + '/creds.json')) {
