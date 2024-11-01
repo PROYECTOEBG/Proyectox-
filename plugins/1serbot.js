@@ -69,7 +69,7 @@ args[0] ? fs.writeFileSync('./EliteBot/' + id + '/creds.json', JSON.stringify(JS
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const msgRetry = (MessageRetryMap) => { }
 const msgRetryCache = new NodeCache()
-const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBotSession/" + id)
+const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBot/" + id)
 
 const connectionOptions = {
 printQRInTerminal: false,
