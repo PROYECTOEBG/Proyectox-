@@ -35,7 +35,7 @@ let lastConnectionMessageTime = 0;
 let parentw = conn
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
 let uniqid = `${who.split`@`[0]}`//parentw.getName(who)
-var bot = path.join(jadibts, uniqid)//path.join(authFolderAniMX, uniqid)
+var bot = path.join( uniqid)//path.join(authFolderAniMX, uniqid)
 const mcode = args[0] && args[0].includes("--code") ? true : args[1] && args[1].includes("--code") ? true : false // stoled from aiden hehe
 if (!global.db.data.bot[conn.user.jid].settings.modejadibot) {
 resp = `*[❗INFO❗] ESTE COMANDO ESTA INHABILITADO POR EL ACTUAL OWNER / PROPIETARIO DEL BOT*`
