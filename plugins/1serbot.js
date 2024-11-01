@@ -154,7 +154,7 @@ await parentw.sendMessage(m.chat, {text : args[0] ? `❱❱ 𝗔 𝗧𝗨𝗦 �
 Gracias por ser parte de proyectoX & EBG.`}, { quoted: m })
 await parentw.sendMessage(m.chat, {text : `𝗖𝗢𝗡𝗘𝗖𝗧𝗔𝗡𝗗𝗢 ...`}, { quoted: m })
 await sleep(5000)
-if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./IgnaJadiBot/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
+if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./EliteBotGlobal/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
 }}
 setInterval(async () => {
