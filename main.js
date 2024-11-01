@@ -104,7 +104,7 @@ global.chatgpt.chain = lodash.chain(global.chatgpt.data);
 loadChatgptDB();
 
 global.creds = 'creds.json'
-global.authFile = 'GataBotSession'
+global.authFile = 'EliteBotSession'
 global.authFileJB  = 'EliteBotGlobal'
 global.rutaBot = join(__dirname, authFile)
 global.rutaJadiBot = join(__dirname, authFileJB)
@@ -472,13 +472,13 @@ unlinkSync(filePath)})
 }
 function purgeSession() {
 let prekey = []
-let directorio = readdirSync("./GataBotSession")
+let directorio = readdirSync("./EliteBotSession")
 let filesFolderPreKeys = directorio.filter(file => {
 return file.startsWith('pre-key-')
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
-unlinkSync(`./GataBotSession/${files}`)
+unlinkSync(`./EliteBotSession/${files}`)
 })
 } 
 function purgeSessionSB() {
@@ -504,7 +504,7 @@ console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeSessionSB2()))
 console.log(chalk.bold.red(lenguajeGB.smspurgeSessionSB3() + err))
 }}
 function purgeOldFiles() {
-const directories = ['./GataBotSession/', './EliteBotGlobal/']
+const directories = ['./EliteBotSession/', './EliteBotGlobal/']
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
 if (err) throw err
