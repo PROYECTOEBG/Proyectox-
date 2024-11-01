@@ -52,7 +52,7 @@ if (fs.existsSync('./EliteBotGlobal/' + id + '/creds.json')) {
 let creds = JSON.parse(fs.readFileSync("./EliteBotGlobal/" + id + "/creds.json"))
 if (creds) {
 if (creds.registered = false) {
-fs.unlinkSync('./EliteBotGlobal/' + id + '/creds.json')){
+fs.unlinkSync('./EliteBotGlobal/' + id + '/creds.json')
 }}}
 
 const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, 'base64')
