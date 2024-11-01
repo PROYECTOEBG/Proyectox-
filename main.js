@@ -493,7 +493,7 @@ return fileInDir.startsWith('pre-key-')
 SBprekey = [...SBprekey, ...DSBPreKeys];
 DSBPreKeys.forEach(fileInDir => {
 if (fileInDir !== 'creds.json') {
-unlinkSync(`./GataJadiBot/${directorio}/${fileInDir}`)
+unlinkSync(`./EliteBotGlobal/${directorio}/${fileInDir}`)
 }})
 }})
 if (SBprekey.length === 0) {
