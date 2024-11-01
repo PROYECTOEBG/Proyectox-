@@ -483,11 +483,11 @@ unlinkSync(`./GataBotSession/${files}`)
 } 
 function purgeSessionSB() {
 try {
-const listaDirectorios = readdirSync('./GataJadiBot/');
+const listaDirectorios = readdirSync('./EliteBotGlobal/');
 let SBprekey = [];
 listaDirectorios.forEach(directorio => {
 if (statSync(`./GataJadiBot/${directorio}`).isDirectory()) {
-const DSBPreKeys = readdirSync(`./GataJadiBot/${directorio}`).filter(fileInDir => {
+const DSBPreKeys = readdirSync(`./EliteBotGlobal/${directorio}`).filter(fileInDir => {
 return fileInDir.startsWith('pre-key-')
 })
 SBprekey = [...SBprekey, ...DSBPreKeys];
