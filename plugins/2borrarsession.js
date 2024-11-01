@@ -19,7 +19,7 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let uniqid = `${who.split`@`[0]}` //parentw.getName(who)
 if (global.conn.user.jid !== conn.user.jid) await conn.reply(m.chat, '🚩 *Ve directamente al número del bot*', m, fake, )
 else {
-await conn.reply(m.chat, '🚩 *Eliminando archivos*', m, fake, )
+await conn.reply(m.chat, '🚩 *Eliminando archivos*', m, )
 }
 
 try {
