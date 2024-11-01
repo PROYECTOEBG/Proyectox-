@@ -9,7 +9,7 @@ import util from 'util'
 import * as ws from 'ws'
 const { child, spawn, exec } = await import('child_process')
 const { CONNECTING } = ws
-import { makeWASocket } from '../../lib/simple.js'
+import { makeWASocket } from '../lib/simple.js'
 
 let check1 = 'NjBhZGVmZWI4N2M2'
 let check2 = 'ZThkMmNkOGVlMDFmZD'
