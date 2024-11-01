@@ -122,7 +122,7 @@ const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.erro
 if (connection === 'close') {
 console.log(reason)
 if (reason == 405) {
-if (!fs.existsSync('./EliteBotGlobal/'  + id + '/creds.json')
+if (!fs.existsSync('./EliteBotGlobal/'  + id + '/creds.json')){
 
 return await conn.reply(m.chat, '✨️ 𝙲𝚎𝚛𝚛𝚊𝚗𝚍𝚘 :𝚌', m)
 }
