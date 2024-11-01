@@ -9,7 +9,7 @@ else {
 await conn.sendMessage(m.chat, {text: "*👋🏻 Adiós Bot, haz dejado de ser un Bot*"}, { quoted: m }) 
 }
 try {
-fs.rmdir("./EliteBotGlobal/" + uniqid, { recursive: true, force: true })
+fs.rmdir("./GataJadiBot/" + uniqid, { recursive: true, force: true })
 await conn.sendMessage(m.chat, {text : "*Todos los archivos de session fueron eliminados*" } , { quoted: m })
 } catch(err) {
 console.error('La carpeta o archivo de sesion no existen ', err)   
