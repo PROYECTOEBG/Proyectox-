@@ -1,8 +1,8 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, `🚩 *Que Nombre Deseas Ponerme?*`, m, rcanal)
+  if (!text) return conn.reply(m.chat, `🚩 *Que Nombre Deseas Ponerme?*`, m)
   try {
     await conn.updateProfileName(text)
-    return conn.reply(m.chat, '✅️ *Nombre Cambiado Con Éxito*', m, rcanal)
+    return conn.reply(m.chat, '✅️ *Nombre Cambiado Con Éxito*', m)
   } catch (e) {
     console.log(e)
     throw `🚩 Ocurrió Un Error¡!`
