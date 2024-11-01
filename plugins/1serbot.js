@@ -44,15 +44,15 @@ args[0] = args[0].replace('--code', '').trim()
 if (args[1]) args[1] = args[1].replace('--code', '').trim()
 if (args[0] == '') args[0] = undefined
 console.log(args[0])}
-if (!fs.existsSync('./EliteBotSession/'+ id)){
-fs.mkdirSync('./EliteBotSession/'+ id, { recursive: true })}
-args[0] && args[0] != undefined ? fs.writeFileSync('./EliteBotSession/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
+if (!fs.existsSync('./EliteBot/'+ id)){
+fs.mkdirSync('./EliteBot/'+ id, { recursive: true })}
+args[0] && args[0] != undefined ? fs.writeFileSync('./EliteBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
 
-if (fs.existsSync('./EliteBotSession/' + id + '/creds.json')) {
-let creds = JSON.parse(fs.readFileSync("./EliteBotSession/" + id + "/creds.json"))
+if (fs.existsSync('./EliteBot/' + id + '/creds.json')) {
+let creds = JSON.parse(fs.readFileSync("./EliteBot/" + id + "/creds.json"))
 if (creds) {
 if (creds.registered = false) {
-fs.unlinkSync('./EliteBotSession/' + id + '/creds.json')
+fs.unlinkSync('./EliteBot/' + id + '/creds.json')
 }}}
 
 const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, 'base64')
@@ -61,10 +61,10 @@ const drmer = Buffer.from(drm1 + drm2, `base64`)
 async function jddt() {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
 let id = `${who.split`@`[0]}`
-if (!fs.existsSync('./EliteBotSession/'+ id)){
-fs.mkdirSync('./EliteBotSession/'+ id, { recursive: true })
+if (!fs.existsSync('./EliteBot/'+ id)){
+fs.mkdirSync('./EliteBot/'+ id, { recursive: true })
 }
-args[0] ? fs.writeFileSync('./EliteBotSession/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
+args[0] ? fs.writeFileSync('./EliteBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
 
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const msgRetry = (MessageRetryMap) => { }
@@ -122,7 +122,7 @@ const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.erro
 if (connection === 'close') {
 console.log(reason)
 if (reason == 405) {
-await fs.unlinkSync('./EliteBotSession/'  + id + '/creds.json')
+await fs.unlinkSync('./EliteBot/'  + id + '/creds.json')
 
 return await conn.reply(m.chat, '✨️ 𝙲𝚎𝚛𝚛𝚊𝚗𝚍𝚘 :𝚌', m)
 }
@@ -154,7 +154,7 @@ await parentw.sendMessage(m.chat, {text : args[0] ? `❱❱ 𝗔 𝗧𝗨𝗦 �
 Gracias por ser parte de proyectoX & EBG.`}, { quoted: m })
 await parentw.sendMessage(m.chat, {text : `𝗖𝗢𝗡𝗘𝗖𝗧𝗔𝗡𝗗𝗢 ...`}, { quoted: m })
 await sleep(5000)
-if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./EliteBotSession/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
+if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./EliteBot/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
 }}
 setInterval(async () => {
