@@ -29,6 +29,6 @@ const handler = async (m, {conn, participants, usedPrefix, command}) => {
   }, durationMs);
 };
 
-handler.command = /^mute$/i;
+handler.command = /^mutoo$/i;
 handler.admin = true;
 export default handler;
