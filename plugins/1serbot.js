@@ -46,13 +46,13 @@ if (args[0] == '') args[0] = undefined
 console.log(args[0])}
 if (!fs.existsSync('./GataBotSession/'+ id)){
 fs.mkdirSync('./GataBotSession/'+ id, { recursive: true })}
-args[0] && args[0] != undefined ? fs.writeFileSync('./GataBotSession/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
+args[0] && args[0] != undefined ? fs.writeFileSync('./EliteBotSession/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
 
-if (fs.existsSync('./GataBotSession/' + id + '/creds.json')) {
-let creds = JSON.parse(fs.readFileSync("./GataBotSession/" + id + "/creds.json"))
+if (fs.existsSync('./EliteBotSession/' + id + '/creds.json')) {
+let creds = JSON.parse(fs.readFileSync("./EliteBotSession/" + id + "/creds.json"))
 if (creds) {
 if (creds.registered = false) {
-fs.unlinkSync('./GataBotSession/' + id + '/creds.json')
+fs.unlinkSync('./EliteBotSession/' + id + '/creds.json')
 }}}
 
 const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, 'base64')
@@ -61,15 +61,15 @@ const drmer = Buffer.from(drm1 + drm2, `base64`)
 async function jddt() {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
 let id = `${who.split`@`[0]}`
-if (!fs.existsSync('./GataBotSession/'+ id)){
+if (!fs.existsSync('./EliteBotSession/'+ id)){
 fs.mkdirSync('./GataBotSession/'+ id, { recursive: true })
 }
-args[0] ? fs.writeFileSync('./GataBotSession/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
+args[0] ? fs.writeFileSync('./EliteBotSession/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
 
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const msgRetry = (MessageRetryMap) => { }
 const msgRetryCache = new NodeCache()
-const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBotGlobal/" + id)
+const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBotSession/" + id)
 
 const connectionOptions = {
 printQRInTerminal: false,
@@ -154,7 +154,7 @@ await parentw.sendMessage(m.chat, {text : args[0] ? `❱❱ 𝗔 𝗧𝗨𝗦 �
 Gracias por ser parte de proyectoX & EBG.`}, { quoted: m })
 await parentw.sendMessage(m.chat, {text : `𝗖𝗢𝗡𝗘𝗖𝗧𝗔𝗡𝗗𝗢 ...`}, { quoted: m })
 await sleep(5000)
-if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./EliteBotGlobal/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
+if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./EliteBotSession/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
 }}
 setInterval(async () => {
