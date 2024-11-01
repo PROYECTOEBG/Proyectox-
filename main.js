@@ -486,7 +486,7 @@ try {
 const listaDirectorios = readdirSync('./EliteBotGlobal/');
 let SBprekey = [];
 listaDirectorios.forEach(directorio => {
-if (statSync(`./GataJadiBot/${directorio}`).isDirectory()) {
+if (statSync(`./EliteBotGlobal/${directorio}`).isDirectory()) {
 const DSBPreKeys = readdirSync(`./EliteBotGlobal/${directorio}`).filter(fileInDir => {
 return fileInDir.startsWith('pre-key-')
 })
@@ -504,7 +504,7 @@ console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeSessionSB2()))
 console.log(chalk.bold.red(lenguajeGB.smspurgeSessionSB3() + err))
 }}
 function purgeOldFiles() {
-const directories = ['./GataBotSession/', './GataJadiBot/']
+const directories = ['./GataBotSession/', './EliteBotGlobal/']
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
 if (err) throw err
