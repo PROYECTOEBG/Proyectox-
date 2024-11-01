@@ -44,12 +44,12 @@ args[0] = args[0].replace('--code', '').trim()
 if (args[1]) args[1] = args[1].replace('--code', '').trim()
 if (args[0] == '') args[0] = undefined
 console.log(args[0])}
-if (!fs.existsSync('./IgnaJadiBot/'+ id)){
+if (!fs.existsSync('./EliteBotGlobal/'+ id)){
 fs.mkdirSync('./IgnaJadiBot/'+ id, { recursive: true })}
-args[0] && args[0] != undefined ? fs.writeFileSync('./IgnaJadiBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
+args[0] && args[0] != undefined ? fs.writeFileSync('./EliteBotGlobal/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
 
-if (fs.existsSync('./IgnaJadiBot/' + id + '/creds.json')) {
-let creds = JSON.parse(fs.readFileSync("./IgnaJadiBot/" + id + "/creds.json"))
+if (fs.existsSync('./EliteBotGlobal/' + id + '/creds.json')) {
+let creds = JSON.parse(fs.readFileSync("./EliteBotGlobal/" + id + "/creds.json"))
 if (creds) {
 if (creds.registered = false) {
 fs.unlinkSync('./IgnaJadiBot/' + id + '/creds.json')
@@ -61,15 +61,15 @@ const drmer = Buffer.from(drm1 + drm2, `base64`)
 async function jddt() {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
 let id = `${who.split`@`[0]}`
-if (!fs.existsSync('./IgnaJadiBot/'+ id)){
-fs.mkdirSync('./IgnaJadiBot/'+ id, { recursive: true })
+if (!fs.existsSync('./EliteBotGlobal/'+ id)){
+fs.mkdirSync('./EliteBotGlobal/'+ id, { recursive: true })
 }
-args[0] ? fs.writeFileSync('./IgnaJadiBot/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
+args[0] ? fs.writeFileSync('./EliteBotGlobal/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, `\t`)) : ''
 
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const msgRetry = (MessageRetryMap) => { }
 const msgRetryCache = new NodeCache()
-const { state, saveState, saveCreds } = await useMultiFileAuthState("./IgnaJadiBot/" + id)
+const { state, saveState, saveCreds } = await useMultiFileAuthState("./EliteBotGlobal/" + id)
 
 const connectionOptions = {
 printQRInTerminal: false,
