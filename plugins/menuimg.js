@@ -370,7 +370,7 @@ let menu = `╔═════════════════╗
 ╰ ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ ∙ ∙
  `.trim()
  
-const vi = ['https://telegra.ph/file/d56088393480ea6933592.mp4']
+const img = ['https://qu.ax/afNgz.jpg']
 await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak })
 	
 } catch (e) {
@@ -396,7 +396,7 @@ return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
 
 //https://telegra.ph/file/4be624576f970e0e1a413.jpg vix
 
-
+//https://qu.ax/afNgz.jpg abadon
 //https://telegra.ph/file/12302e01eb40312c82401.png ciber bot
 
 //https://telegra.ph/file/b81b48988d75eab7d9e64.jpg nika
