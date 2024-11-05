@@ -370,7 +370,7 @@ let menu = `╔═════════════════╗
 ╰ ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙ ∙ ∙
  `.trim()
  
-const img = ['https://qu.ax/afNgz.jpg']
+const vi = ['https://qu.ax/wgddL.mp4']
 await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak })
 	
 } catch (e) {
