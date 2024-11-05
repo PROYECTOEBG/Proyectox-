@@ -4,7 +4,6 @@ import { promises } from 'fs'
 import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, command, args, usedPrefix: _p, __dirname, isOwner, text, isAdmin, isROwner }) => {
   
-  
 const { levelling } = '../lib/levelling.js'
 //let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) => {
 
@@ -61,7 +60,7 @@ text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length
   
   
 //let name = await conn.getName(m.sender)
-let pp = './media/menus/Menuvid3.mp4'
+let pp = gataVidMenu
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let mentionedJid = [who]
 let username = conn.getName(who)
@@ -69,7 +68,7 @@ let username = conn.getName(who)
 //user.registered = false
 
 let menu = `
-╭━〔 𝙍𝘼𝙉𝙂𝙊𝙎 | 𝙍𝙊𝙇 〕━⬣
+╭━━━〔𝙍𝘼𝙉𝙂𝙊𝙎〕━━━⬣
 𝙉𝙊𝙈𝘽𝙍𝙀
 ${username}
 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
@@ -171,13 +170,13 @@ ${role}
 *NOVATO(A) III* 🪤
 *NOVATO(A) IV* 🪤
 *NOVATO(A) V* 🪤
-╰━━━━━━━━━━━━⬣`.trim()
+╰━━━━━━━━━━━━━━━━━━━⬣`.trim()
 await conn.sendFile(m.chat, pp, 'gata.mp4', menu)
 //conn.sendHydrated(m.chat, menu, `𝙍𝘼𝙉𝙂𝙊𝙎 | ${wm}`, pp, 'https://github.com/GataNina-Li/GataBot-MD', '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿', null, null, [['𝙈𝙚𝙣𝙪́ 𝙘𝙤𝙢𝙥𝙡𝙚𝙩𝙤 | 𝙁𝙪𝙡𝙡 𝙈𝙚𝙣𝙪 💫', '.allmenu'],['𝙏𝙤𝙥𝙨 | 𝙍𝙖𝙣𝙠𝙞𝙣𝙜 🏆', `${usedPrefix}top`],['𝙈𝙚𝙣𝙪 𝙋𝙧𝙞𝙣𝙘𝙞𝙥𝙖𝙡 | 𝙈𝙖𝙞𝙣 𝙢𝙚𝙣𝙪 ⚡', '#menu']], m,)
 }
 handler.help = ['infomenu'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
-handler.command = /^(mirango)$/i
+handler.command = /^(rol|rango|mirango|rangos)$/i
 handler.register = false
 handler.exp = 0
 export default handler
