@@ -67,34 +67,19 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let mentionedJid = [who]
 let username = conn.getName(who)
 
-let tex = `╭━━〔 *${wm}* 〕━━⬣
-┃ ✪ *NOMBRE* 
-┃ *${username}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *EXPERIENCIA | EXP* 
-┃ ➥ *${user.exp - min}/${xp}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *NIVEL | LEVEL*
-┃ ➥ *${level}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *ROL*
-┃ ➥ ${role}
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *GATACOINS*
-┃ ➥ *${money}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *TOKENS*
-┃ ➥ *${joincount}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *DIAMANTES* 
-┃ ➥ *${limit}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *FECHA*
-┃ ➥ *${week}, ${date}*
-┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-┃ ✪ *USUARIOS | USERS*
-┃ ➥ *${Object.keys(global.db.data.users).length}* 
-╰━━━━━━〔 *𓃠 ${vs}* 〕━━━━━━⬣`
+let tex = `╭━━〔 *𝙈𝙄 𝙀𝙓𝙋𝙀𝙍𝙄𝙀𝙉𝘾𝙄𝘼* 〕━━
+
+┃ 🥳 *NOMBRE* : *${username}*
+┃ 🧿 *ROL* : ${role}
+┃ 💰 *COINS OBTENIDOS* : *${money}*
+┃ 💸 *TOKENS CONSEGUIDOS* : *${joincount}*
+┃ 💎 *DIAMANTES* : *${limit}*
+┃ ⛏ *EXPERIENCIA* : *${user.exp}*
+┃ ⏱ *FECHA* : *${week}, ${date}*
+┃ 
+┃┈ ┈ ┈
+┃ 👤 *TOTAL USUARIOS* : *${Object.keys(global.db.data.users).length}* 
+╰━━━━━`
 await conn.sendFile(m.chat, pp, 'gata.jpg', tex, fkontak, { mentions: [aa,] })
 /*await conn.sendButton(m.chat, tex, wm, [['𝙀𝙭𝙥𝙚𝙧𝙞𝙚𝙣𝙘𝙞𝙖 𝙥𝙤𝙧 𝘿𝙞𝙖𝙢𝙖𝙣𝙩𝙚 ⚡', '.buy'],
 ['𝙂𝙖𝙩𝙖𝘾𝙤𝙞𝙣𝙨 𝙥𝙤𝙧 𝘿𝙞𝙖𝙢𝙖𝙣𝙩𝙚 🐈', '/buy2'],
