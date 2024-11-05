@@ -71,8 +71,8 @@ let tex = `╭━━〔 *𝙈𝙄 𝙀𝙓𝙋𝙀𝙍𝙄𝙀𝙉𝘾𝙄𝘼* 
 
 ┃ 🥳 *NOMBRE* : *${username}*
 ┃ 🧿 *ROL* : ${role}
-┃ 💰 *COINS OBTENIDOS* : *${money}*
-┃ 💸 *TOKENS CONSEGUIDOS* : *${joincount}*
+┃ 💰 *ELITE COINS* : *${money}*
+┃ 💸 *DOLARES* : *${joincount}*
 ┃ 💎 *DIAMANTES* : *${limit}*
 ┃ ⛏ *EXPERIENCIA* : *${user.exp}*
 ┃ ⏱ *FECHA* : *${week}, ${date}*
