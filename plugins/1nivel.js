@@ -11,7 +11,7 @@ let txt = `🌸 *Nombre* ${name}\n\n`
 txt += `🌸 *Nivel* ${user.level}\n`
 txt += `🍭 *XP* ${user.exp - min} / ${xp}\n\n`
 txt += `🌸 No es suficiente XP *${max - user.exp}* ¡De nuevo! ✨`
-await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)}
+await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null)}
 let before = user.level * 1
 while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 if (before !== user.level) {
