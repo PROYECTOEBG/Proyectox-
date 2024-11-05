@@ -21,7 +21,7 @@ txt += `• 🧬 Nivel anterior : ${before}\n`
 txt += `• 🧬 Nuevos niveles : ${user.level}\n`
 txt += `• 📅 Fecha : ${new Date().toLocaleString('id-ID')}\n\n`
 txt += `🌸 *Nota:* _Cuanto más a menudo interactúes con *Akari*, mayor será tu nivel_`
-await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)}}
+await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null)}}
 
 handler.help = ['levelup']
 handler.tags = ['rpg']
