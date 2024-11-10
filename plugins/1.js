@@ -2,7 +2,7 @@ import yts from 'yt-search';
 
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
     
-    if (!text) throw `🌹 Te Faltó la canción De Youtube.\n_(Puedes hacer una búsqueda utilizando el comando ${usedPrefix}yts)_\n _🌷.- Ejemplo:_ *${usedPrefix + command}*`;
+    if (!text) throw `🌹 Te Faltó Un Link De Un Video De Youtube.\n_(Puedes hacer una búsqueda utilizando el comando ${usedPrefix}yts)_\n _🌷.- Ejemplo:_ *${usedPrefix + command}*`, m, rcanal)}
     
     await conn.sendMessage(m.chat, { react: { text: '🥀', key: m.key }});
     
@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     await conn.sendMessage(m.chat, { 
         image: { url: vid.thumbnail }, 
         caption: body 
-    }, { quoted: m,rcanal });
+    }, { quoted: m });
 
     await conn.sendMessage(m.chat, { react: { text: '🌹', key: m.key }});
     await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m });
