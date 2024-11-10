@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     }, { quoted: m });
 
     await conn.sendMessage(m.chat, { react: { text: '🌹', key: m.key }});
-    await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m });
+    await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m, rcanal });
 };
 
 handler.command = ['play', 'yta'];
