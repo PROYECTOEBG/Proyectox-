@@ -36,16 +36,14 @@ handler.register = true;
 handler.tags = ['descargas'];
 export default handler;
 
-async function dl_vid(url) {
-    const response = await fetch('https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}', {
-        method: 'POST',
-        headers: {
-            'accept': '*/*',
-            'api_key': 'free',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: url,
+const vid = videoSearch.all[0];
+    const videoUrl = vid.url;
+    const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`;
+    const apiResponse = await fetch(apiUrl);
+    const delius = await apiResponse.json();
+
+    if (!delius.status) {
+        return global.errori;
         })
     });
 
