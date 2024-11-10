@@ -24,11 +24,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     const downloadUrl = delius.data.download.url;
 
     // Crear el mensaje informativo del video/audio
-    let body = `*『 𝐘 𝐮 𝐤 𝐢 _ 𝐒 𝐮 𝐨 𝐮 - 𝐁 𝐨 𝐭 』*
-
- *☊.- 𝚃𝚒́𝚝𝚞𝚕𝚘:* ${vid.title || 'Desconocido'}
- *♕.- 𝙰𝚞𝚝𝚘𝚛:* ${vid.author?.name || 'Desconocido'}
- *⛨.- 𝙲𝚊𝚗𝚊𝚕:* ${vid.author?.url || 'Desconocido'}
+    let body = `
  *🝓.- 𝙵𝚎𝚌𝚑𝚊 𝚍𝚎 𝙿𝚞𝚋𝚕𝚒𝚌𝚊𝚌𝚒𝚘́𝚗:* ${vid.ago || 'Desconocido'}
  *🜵.- 𝙳𝚞𝚛𝚊𝚌𝚘́𝚗:* ${vid.timestamp || 'Desconocido'}
  *🜚.- 𝚅𝚒𝚜𝚝𝚊𝚜:* ${`${vid.views || 'Desconocido'}`}
