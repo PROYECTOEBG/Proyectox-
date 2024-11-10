@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     const downloadUrl = delius.data.download.url;
 
     // Crear el mensaje informativo del video/audio
-    let body = `01:27 ━━━━━⬤──── ${search.all[0].timestamp}
+    let body = `01:27 ━━━━━⬤──── ${vid.timestamp
 *⇄ㅤ   ◁   ㅤ  ❚❚ㅤ     ▷ㅤ   ↻*
 𝙀𝙡𝙞𝙩𝙚 𝘽𝙤𝙩 𝙂𝙡𝙤𝙗𝙖𝙡`;
 
