@@ -26,7 +26,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     // Crear el mensaje informativo del video/audio
     let body = `01:27 ━━━━━⬤──── ${vid.timestamp || 'Desconocido'}
 *⇄ㅤ   ◁   ㅤ  ❚❚ㅤ     ▷ㅤ   ↻*
-𝙀𝙡𝙞𝙩𝙚 𝘽𝙤𝙩 𝙂𝙡𝙤𝙗𝙖𝙡`;
+𝙀𝙡𝙞𝙩𝙚 𝘽𝙤𝙩 𝙂𝙡𝙤𝙗𝙖𝙡`,m,rcanal)}
 
     // Enviar el mensaje informativo con la imagen
     await conn.sendMessage(m.chat, { 
