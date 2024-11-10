@@ -38,5 +38,5 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m });
 };
 
-handler.command = ['play', 'yta'];
+handler.command = ['play', 'youtube'];
 export default handler;
