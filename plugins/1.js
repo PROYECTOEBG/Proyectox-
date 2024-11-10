@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
     
     if (!text) throw `Escribiste mal.`;
     
-    await conn.sendMessage(m.chat, { react: { text: '🥀', key: m.key }});
+    await conn.sendMessage(m.chat, { react: { text: '🕓', key: m.key }});
     
     const videoSearch = await yts(text);
     if (!videoSearch.all.length) {
@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
         caption: body 
     }, { quoted: m });
 
-    await conn.sendMessage(m.chat, { react: { text: '🌹', key: m.key }});
+    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key }});
     await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m });
 };
 
