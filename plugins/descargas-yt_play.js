@@ -1,58 +1,33 @@
-import yts from 'yt-search' 
-const handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `⭐ 𝘐𝘯𝘨𝘳𝘦𝘴𝘢 𝘦𝘭 𝘵𝘪́𝘵𝘶𝘭𝘰 𝘥𝘦 𝘭𝘢 𝘤𝘢𝘯𝘤𝘪𝘰́𝘯 𝘥𝘦 𝘠𝘰𝘶𝘛𝘶𝘣𝘦 𝘲𝘶𝘦 𝘥𝘦𝘴𝘦𝘢𝘴 𝘥𝘦𝘴𝘤𝘢𝘳𝘨𝘢𝘳.
+import yts from 'yt-search';
 
-» 𝘌𝘫𝘦𝘮𝘱𝘭𝘰:
-${usedPrefix + command} Feid - Luna`;
-    await m.react('🕓')
+let handler = async (m, { conn, command, args, text, usedPrefix }) => {
+if (!text) return conn.reply(m.chat, '⭐ 𝘐𝘯𝘨𝘳𝘦𝘴𝘢 𝘦𝘭 𝘵𝘪́𝘵𝘶𝘭𝘰 𝘥𝘦 𝘭𝘢 𝘤𝘢𝘯𝘤𝘪𝘰́𝘯 𝘥𝘦 𝘠𝘰𝘶𝘛𝘶𝘣𝘦 𝘲𝘶𝘦 𝘥𝘦𝘴𝘦𝘢𝘴 𝘥𝘦𝘴𝘤𝘢𝘳𝘨𝘢𝘳.\n\n» 𝘌𝘫𝘦𝘮𝘱𝘭𝘰:\n.play Feid - Luna', m);
 
-    const randomReduction = Math.floor(Math.random() * 5) + 1;
-    let search = await yts(text);
-    let f = `\n\n${String.fromCharCode(68,101,118,101,108,111,112,101,100,32,98,121,32,73,39,109,32,70,122,32,126)}`;
-    let isVideo = /vid$/.test(command);
-    let urls = search.all[0].url;
-    let body = `01:27 ━━━━━⬤──── ${search.all[0].timestamp}
-*⇄ㅤ   ◁   ㅤ  ❚❚ㅤ     ▷ㅤ   ↻*
-`; conn.sendMessage(m.chat, { 
-        image: { url: search.all[0].thumbnail }, 
-        caption: body + f
-    }, { quoted: m });
+await m.react('🕓');
+let res = await yts(text);
+let play = res.videos[0];
 
-    let res = await dl_vid(urls)
-    await m.react('✅')
-    let type = isVideo ? 'video' : 'audio';
-    let video = res.data.mp4;
-    let audio = res.data.mp3;
-    conn.sendMessage(m.chat, { 
-        [type]: { url: isVideo ? video : audio }, 
-        gifPlayback: false, 
-        mimetype: isVideo ? "video/mp4" : "audio/mpeg" 
-    }, { quoted: m });
+if (!play) return conn.reply(m.chat, `No se encontraron resultados`, m)
+
+let { title, thumbnail, ago, timestamp, views, videoId, url } = play;
+
+let txt = '';
+txt += ``;
+txt += ``;
+txt += ``;
+txt += ``;
+txt += ``;
+
+await conn.sendButton(m.chat, txt,author ,thumbnail, [
+['𝙰𝚞𝚍𝚒𝚘', `${usedPrefix}ytmp3 ${url}`],
+['𝚅𝚒𝚍𝚎𝚘', `${usedPrefix}ytmp4 ${url}`]
+], null, [['𝙲𝚊𝚗𝚊𝚕 ✨', md]], m);
+await m.react('✅')
 }
 
-handler.command = ['play', 'play2'];
-handler.help = ['play', 'play2'];
-handler.register = true;
-handler.tags = ['descargas'];
+handler.help = ['play', 'play2']
+handler.tags = ['dl'];
+handler.register = [true];
+handler.command = ['play', 'play2']
+
 export default handler;
-
-async function dl_vid(url) {
-    const response = await fetch('https://shinoa.us.kg/api/download/ytdl', {
-        method: 'POST',
-        headers: {
-            'accept': '*/*',
-            'api_key': 'free',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: url,
-        })
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-}
