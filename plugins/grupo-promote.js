@@ -1,4 +1,5 @@
 let handler = async (m, { conn,usedPrefix, command, text }) => {
+let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 if(isNaN(text) && !text.match(/@/g)){
 
 }else if(isNaN(text)) {
@@ -24,7 +25,7 @@ var user = number + '@s.whatsapp.net'
 conn.groupParticipantsUpdate(m.chat, [user], 'promote')
 conn.reply(m.chat, lenguajeGB['smsAvisoEG']() + lenguajeGB['smsDemott2'](), fkontak, m)
 }}
-handler.command = /^(promote|daradmin|darpoder)$/i
+handler.command = /^(promote|admin|daradmin|darpoder)$/i
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
