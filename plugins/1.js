@@ -2,7 +2,7 @@ import yts from 'yt-search';
 
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
     
-    if (!text) throw `🌹 Te Faltó Un Link De Un Video De Youtube.\n_(Puedes hacer una búsqueda utilizando el comando ${usedPrefix}yts)_\n _🌷.- Ejemplo:_ *${usedPrefix + command}*`, m, rcanal)}
+    if (!text) throw `🌹 Te Faltó el nombre  De Youtube.\n_(Puedes hacer una búsqueda utilizando el comando ${usedPrefix}yts)_\n _🌷.- Ejemplo:_ *${usedPrefix + command}*`)}
     
     await conn.sendMessage(m.chat, { react: { text: '🥀', key: m.key }});
     
