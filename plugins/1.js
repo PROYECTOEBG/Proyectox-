@@ -28,7 +28,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 
     // Enviar el mensaje informativo con la imagen
     await conn.sendMessage(m.chat, { 
-        image: { url: vid.thumbnail }, 
+         { url: vid.thumbnail }, 
         
     }, { quoted: m });
 
