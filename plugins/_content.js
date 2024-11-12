@@ -9,7 +9,7 @@ let handler = m => m
 handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwner } ) {
 global.key = ''
 
-global.canales = [canal1, canal2, canal3, canal4].getRandom()
+global.canales = [ canal2, canal3, canal4].getRandom()
 global.welgata = [tk, ig, yt2, yt2, ig, md, ig, yt, paypal, yt2, yt2, ig, fb, tk, ths, asistencia].getRandom()
 global.redesMenu = [canal1, canal2, canal3, canal4, soporteGB, grupo1, grupo2, grupo3, grupo4, grupo5, grupo6, md, ig, paypal, yt, asistencia, fb, tk].getRandom()
 global.accountsgb = [canal1, canal2, canal3, canal4, tk, ig, yt, paypal, fb, ths, md, asistencia].getRandom()
@@ -75,7 +75,7 @@ global.img18 = 'https://qu.ax/HCt.jpg'
 
 global.logogit = 'https://qu.ax/RzKF.jpg'
 
-global.gataVidMenu = ['https://qu.ax/AAvg.mp4', 'https://qu.ax/SeFS.mp4', 'https://qu.ax/NqZN.mp4'].getRandom()
+global.gataVidMenu = ['https://qu.ax/bEYc.jpg', 'https://qu.ax/bEYc.jpg', 'https://qu.ax/bEYc.jpg'].getRandom()
 global.gataMenu = ['./media/menus/sinfoto3.jpg']
 global.gataImg = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8, imagen9, imagen10, imagen11, imagen12, imagen13].getRandom()
 global.bermuda = [bermuda]
