@@ -1,4 +1,3 @@
-
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 import axios from 'axios'
@@ -9,13 +8,13 @@ let handler = m => m
 handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwner } ) {
 global.key = ''
 
-global.canales = [ canal2, canal3, canal4].getRandom()
+global.canales = [canal1, canal2, canal3, canal4].getRandom()
 global.welgata = [tk, ig, yt2, yt2, ig, md, ig, yt, paypal, yt2, yt2, ig, fb, tk, ths, asistencia].getRandom()
 global.redesMenu = [canal1, canal2, canal3, canal4, soporteGB, grupo1, grupo2, grupo3, grupo4, grupo5, grupo6, md, ig, paypal, yt, asistencia, fb, tk].getRandom()
 global.accountsgb = [canal1, canal2, canal3, canal4, tk, ig, yt, paypal, fb, ths, md, asistencia].getRandom()
 
 global.canalIdGB = ["120363160031023229@newsletter", "120363169294281316@newsletter", "120363203805910750@newsletter", "120363302472386010@newsletter"]
-global.canalNombreGB = ["𝙀𝙡𝙞𝙩𝙚𝘽𝙤𝙩𝙂𝙡𝙤𝙗𝙖𝙡 ", "𝙀𝙡𝙞𝙩𝙚𝘽𝙤𝙩𝙂𝙡𝙤𝙗𝙖𝙡 ", "𝙀𝙡𝙞𝙩𝙚𝘽𝙤𝙩𝙂𝙡𝙤𝙗𝙖𝙡 ", "𝙀𝙡𝙞𝙩𝙚𝘽𝙤𝙩𝙂𝙡𝙤𝙗𝙖𝙡 "]
+global.canalNombreGB = ["INFINITY-WA 💫", "GB - UPDATE 🐈", "Tips sobre GataBot 🤩", "NEW PROJECT: YartexBot-MD ✨"]
 global.channelRD = await getRandomChannel()
 
 // Imágenes 
@@ -25,19 +24,6 @@ global.imagen3 = fs.readFileSync("./media/menus/img2.jpg")
 global.imagen4 = fs.readFileSync("./media/menus/img3.jpg")
 global.imagen5 = fs.readFileSync("./media/menus/img4.jpg")
 global.imagen6 = fs.readFileSync("./media/menus/img5.jpg")
-global.bermuda = fs.readFileSync("./media/menus/bermuda.jpg")
-global.purgatorio = fs.readFileSync("./media/menus/purgatorio.jpg")
-global.nexterra = fs.readFileSync("./media/menus/nexterra.jpg")
-global.alpes = fs.readFileSync("./media/menus/alpes.jpg")
-global.kalahari = fs.readFileSync("./media/menus/kalahari.jpg")
-global.agenda = fs.readFileSync("./media/menus/agenda.jpg")
-global.reglascuadri = fs.readFileSync("./media/menus/reglascuadri.jpg")
-global.vestimentacuadri = fs.readFileSync("./media/menus/vestimentacuadri.jpg")
-global.podiocuadri = fs.readFileSync("./media/menus/podiocuadri.jpg")
-global.reglasclk = fs.readFileSync("./media/menus/reglasclk.jpg")
-global.reglaslideres = fs.readFileSync("./media/menus/reglaslideres.jpg")
-global.combode = fs.readFileSync("./media/menus/combode.jpg")
-global.combobr = fs.readFileSync("./media/menus/combobr.jpg")
 global.imagen7 = fs.readFileSync("./media/menus/img6.jpg")
 global.imagen8 = fs.readFileSync("./media/menus/img7.jpg")
 global.imagen9 = fs.readFileSync("./media/menus/img8.jpg")
@@ -46,9 +32,6 @@ global.imagen11 = fs.readFileSync("./media/menus/img10.jpg")
 global.imagen12 = fs.readFileSync("./media/menus/img11.jpg")
 global.imagen13 = fs.readFileSync("./media/menus/img12.jpg")
 
-
-
-  
 global.img = 'https://qu.ax/vZii.jpg'
 global.img2 = 'https://qu.ax/hjcB.jpg'
 
@@ -75,22 +58,9 @@ global.img18 = 'https://qu.ax/HCt.jpg'
 
 global.logogit = 'https://qu.ax/RzKF.jpg'
 
-global.gataVidMenu = ['https://qu.ax/bEYc.jpg', 'https://qu.ax/bEYc.jpg', 'https://qu.ax/bEYc.jpg'].getRandom()
-global.gataMenu = ['./media/menus/sinfoto3.jpg']
+global.gataVidMenu = ['https://qu.ax/AAvg.mp4', 'https://qu.ax/SeFS.mp4', 'https://qu.ax/NqZN.mp4'].getRandom()
+global.gataMenu = [img, img2, img6, img7, img8, img9, img13, img14, img15, img17, img18].getRandom()
 global.gataImg = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8, imagen9, imagen10, imagen11, imagen12, imagen13].getRandom()
-global.bermuda = [bermuda]
-global.purgatorio = [purgatorio]
-global.nexterra = [nexterra]
-global.alpes = [alpes]
-global.kalahari = [kalahari]
-global.agenda = [agenda]
-global.reglascuadri = [reglascuadri]
-global.vestimentacuadri = [vestimentacuadri]
-global.podiocuadri = [podiocuadri]
-global.reglasclk = [reglasclk]
-global.reglaslideres = [reglaslideres]
-global.combode = [combode]
-global.combobr = [combobr]
 
 // Fake
 global.fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
@@ -106,15 +76,15 @@ const estiloaudio = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ..
 let ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 99, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
 let fgif = {key: {participant : '0@s.whatsapp.net'}, message: {"videoMessage": { "title": wm, "h": `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./media/menus/Menu3.jpg')}}}
                              
-
+let enlace = { contextInfo: { externalAdReply: {title: wm + ' 🐈', body: 'support group' , sourceUrl: redesMenu, thumbnail: await(await fetch(gataMenu)).buffer() }}}
 let enlace2 = { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: '', title: wm, body: '😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', thumbnailUrl: gataMenu, sourceUrl: accountsgb }}}
-let dos = [enlace2]  
+let dos = [enlace, enlace2]  
 
-global.wait = "*🚀 P R O C E S A N D O*";
-global.waitt = "*🚀 P R O C E S A N D O*";
-global.waittt = "*🚀 P R O C E S A N D O*";
-global.waitttt = "*🚀 P R O C E S A N D O*";
-global.waittttt = "*🚀 P R O C E S A N D O*";
+global.wait = "⌛ *`Cargando...`*\n*✪✦✦⊹⊹⊹⊹⊹⊹⊹⊹✪* `20%`"
+global.waitt = "⏳ *`Cargando....`*\n*✪✦✦✦✦⊹⊹⊹⊹⊹⊹✪* `40%`"
+global.waittt = "⌛ *`Cargando...`*\n*✪✦✦✦✦✦✦⊹⊹⊹⊹✪* `60%`"
+global.waitttt = "⏳ *`Cargando....`*\n*✪✦✦✦✦✦✦✦✦⊹⊹✪* `80%`"
+global.waittttt = "⌛ *`Procesando...`*\n*✪✦✦✦✦✦✦✦✦✦✦✪* `100%`"
 
 global.destraba = `⏰DESTRABA⏰*
 li.DESTRAVip.to
