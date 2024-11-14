@@ -36,7 +36,7 @@ const str = `╭─ *ProyectoX*
 handler.help = ['estado'];
 handler.tags = ['main'];
 handler.rowner = true;
-handler.command = /^(estado|status|estate|state|stado|stats|runtime|uptime)$/i;
+handler.command = /^(estao|status|estate|state|stado|stats|runtime|uptime)$/i;
 export default handler;
 function clockString(ms) {
   const d = isNaN(ms) ? '--' : Math.floor(ms / 86400000);
