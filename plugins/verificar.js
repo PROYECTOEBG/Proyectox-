@@ -38,7 +38,7 @@ regbot += `• 12 Tokens 💰\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1,  m)
 let chtxt = `👤 *Usuario*: ${m.pushName || 'Anónimo'}\n🌎 *Pais:* ${global.userNationality}\n🗃 *Verificación:* ${user.name}\n🌸 *Edad:* ${user.age} años\n🐢 *Bot:* ${packname}`.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
