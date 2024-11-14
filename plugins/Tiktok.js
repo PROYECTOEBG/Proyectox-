@@ -85,7 +85,7 @@ let category = "imagen"
 //const db_ = JSON.parse(fs.readFileSync(db))
 //const random = Math.floor(Math.random() * db_.links[category].length)
 //const randomlink = db_.links[category][random]
-const response = await fetch(randomlink)
+//const response = await fetch(randomlink)
 const rimg = await response.buffer()
 global.icons = rimg
 
