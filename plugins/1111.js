@@ -18,7 +18,6 @@ const _uptime = process.uptime() * 1000;
 const uptime = clockString(_uptime);
 const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 const str = `╭─ *ProyectoX*
-│ `╭─ *ProyectoX*
 │
 │ *➤ ʜᴏʟᴀ ${taguser}*
 │
@@ -37,7 +36,7 @@ const str = `╭─ *ProyectoX*
 handler.help = ['estado'];
 handler.tags = ['main'];
 handler.rowner = true;
-handler.command = /^(es|status|estate|state|stado|stats|runtime|uptime)$/i;
+handler.command = /^(estado|status|estate|state|stado|stats|runtime|uptime)$/i;
 export default handler;
 function clockString(ms) {
   const d = isNaN(ms) ? '--' : Math.floor(ms / 86400000);
