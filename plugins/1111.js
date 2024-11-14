@@ -17,7 +17,8 @@ const used = process.memoryUsage()
 const _uptime = process.uptime() * 1000;
 const uptime = clockString(_uptime);
 const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
-let yaemori = `╭─ *ProyectoX*
+const str = `╭─ *ProyectoX*
+│ `╭─ *ProyectoX*
 │
 │ *➤ ʜᴏʟᴀ ${taguser}*
 │
