@@ -12,7 +12,7 @@ m.reply(love, null, { mentions: conn.parseMention(love) })
 }
 handler.help = ['ship', 'love']
 handler.tags = ['fun']
-handler.command = /^(ship|loves)$/i
+handler.command = /^(shippp|loves)$/i
 
 handler.register = false
 
