@@ -1,113 +1,62 @@
-import fetch from 'node-fetch'
-import yts from 'yt-search'
-
-let handler = async (m, { conn: star, command, args, text, usedPrefix }) => {
-  if (!text) return star.reply(m.chat, '🍭 Ingresa el título de un video o canción de YouTube.', m)
-    await m.react('🕓')
-    try {
-    let res = await search(args.join(" "))
-    let img = await (await fetch(`${res[0].image}`)).buffer()
-    let txt = 'ゲ◜៹ YouTube Search & Downloader ៹◞ゲ\n\n'
-       txt += `› Título : ${res[0].title}\n`
-       txt += `› Duración : ${secondString(res[0].duration.seconds)}\n`
-       txt += `› Publicado : ${eYear(res[0].ago)}\n`
-       txt += `› Canal : ${res[0].author.name || 'Desconocido'}\n`
-       txt += `› Url : ${'https://youtu.be/' + res[0].videoId}\n\n`
-       txt += `✧ responde a este mensaje con *Video* o *Audio*.`
-await star.sendFile(m.chat, img, 'thumbnail.jpg', txt, m)
-await m.react('✅')
-} catch {
-await m.react('✖️')
-}}
-handler.help = ['play *<búsqueda>*']
-handler.tags = ['downloader']
-handler.command = ['playy']
-//handler.register = true 
+import fg from 'api-dylux' 
+import axios from 'axios'
+import cheerio from 'cheerio'
+import { tiktok } from "@xct007/frieren-scraper";
+let generateWAMessageFromContent = (await import(global.baileys)).default
+import { tiktokdl } from '@bochilteam/scraper'
+let handler = async (m, { conn, text, args, usedPrefix, command}) => {
+if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsTikTok2}\n*${usedPrefix + command} https://vm.tiktok.com/ZM6n8r8Dk/*`, fkontak,  m)
+if (!/(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}${mid.smsTikTok3}`, fkontak,  m)  
+await conn.reply(m.chat, `${lenguajeGB['smsAvisoEG']()}${mid.smsTikTok4}`, fkontak,  m) 
+try {
+const dataF = await tiktok.v1(args[0])
+conn.sendFile(m.chat, dataF.play, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
+} catch (e1) {
+try {
+const tTiktok = await tiktokdlF(args[0])
+conn.sendFile(m.chat, tTiktok.video, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
+} catch (e2) {
+try {
+let p = await fg.tiktok(args[0]) 
+conn.sendFile(m.chat, p.nowm, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m)
+} catch (e3) {
+try { 
+const { author: { nickname }, video, description } = await tiktokdl(args[0])
+const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
+conn.sendFile(m.chat, url, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? `\n⛱️ ${mid.smsYT14}\n*${description}*` : ''}\n${wm}`.trim(), m)
+handler.limit = 2
+} catch (e4) {
+try{
+const response=await fetch(`https://deliriussapi-oficial.vercel.app/download/tiktok?url=${args[0]}`)
+const dataR = await response.json()
+const { author,title, meta} = dataR.data
+conn.sendFile(m.chat, meta.media[0].org, 'tiktok.mp4', `⛱️ ${mid.user}\n*${author.nickname}*\n${wm}`.trim(), m) 
+}
+catch (e5){
+try{
+const response=await fetch(`https://deliriusapi-official.vercel.app/download/tiktok?&query=${text}`)
+const dataR = await response.json()
+conn.sendFile(m.chat,dataR.result.link, 'tiktok.mp4', `⛱️ ${mid.user}\n*${dataR.result.author.username}*\n${wm}`.trim(), m)
+} catch (e) {
+await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
+console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
+console.log(e)
+handler.limit = false
+}}}}}}}
+handler.help = ['tiktok']
+handler.tags = ['dl']
+handler.command = /^(tt|tiktook)(dl|nowm)?$/i
+//handler.limit = 2
 export default handler
 
-async function search(query, options = {}) {
-  let search = await yts.search({ query, hl: "es", gl: "ES", ...options })
-  return search.videos
-}
-
-function MilesNumber(number) {
-  let exp = /(\d)(?=(\d{3})+(?!\d))/g
-  let rep = "$1."
-  let arr = number.toString().split(".")
-  arr[0] = arr[0].replace(exp, rep)
-  return arr[1] ? arr.join(".") : arr[0]
-}
-
-function secondString(seconds) {
-  seconds = Number(seconds);
-  const d = Math.floor(seconds / (3600 * 24));
-  const h = Math.floor((seconds % (3600 * 24)) / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  const s = Math.floor(seconds % 60);
-  const dDisplay = d > 0 ? d + (d == 1 ? ' Día, ' : ' Días, ') : '';
-  const hDisplay = h > 0 ? h + (h == 1 ? ' Hora, ' : ' Horas, ') : '';
-  const mDisplay = m > 0 ? m + (m == 1 ? ' Minuto, ' : ' Minutos, ') : '';
-  const sDisplay = s > 0 ? s + (s == 1 ? ' Segundo' : ' Segundos') : '';
-  return dDisplay + hDisplay + mDisplay + sDisplay;
-}
-
-function sNum(num) {
-    return new Intl.NumberFormat('en-GB', { notation: "compact", compactDisplay: "short" }).format(num)
-}
-
-function eYear(txt) {
-    if (!txt) {
-        return '×'
-    }
-    if (txt.includes('month ago')) {
-        var T = txt.replace("month ago", "").trim()
-        var L = 'hace '  + T + ' mes'
-        return L
-    }
-    if (txt.includes('months ago')) {
-        var T = txt.replace("months ago", "").trim()
-        var L = 'hace ' + T + ' meses'
-        return L
-    }
-    if (txt.includes('year ago')) {
-        var T = txt.replace("year ago", "").trim()
-        var L = 'hace ' + T + ' año'
-        return L
-    }
-    if (txt.includes('years ago')) {
-        var T = txt.replace("years ago", "").trim()
-        var L = 'hace ' + T + ' años'
-        return L
-    }
-    if (txt.includes('hour ago')) {
-        var T = txt.replace("hour ago", "").trim()
-        var L = 'hace ' + T + ' hora'
-        return L
-    }
-    if (txt.includes('hours ago')) {
-        var T = txt.replace("hours ago", "").trim()
-        var L = 'hace ' + T + ' horas'
-        return L
-    }
-    if (txt.includes('minute ago')) {
-        var T = txt.replace("minute ago", "").trim()
-        var L = 'hace ' + T + ' minuto'
-        return L
-    }
-    if (txt.includes('minutes ago')) {
-        var T = txt.replace("minutes ago", "").trim()
-        var L = 'hace ' + T + ' minutos'
-        return L
-    }
-    if (txt.includes('day ago')) {
-        var T = txt.replace("day ago", "").trim()
-        var L = 'hace ' + T + ' dia'
-        return L
-    }
-    if (txt.includes('days ago')) {
-        var T = txt.replace("days ago", "").trim()
-        var L = 'hace ' + T + ' dias'
-        return L
-    }
-    return txt
-          }
+async function tiktokdlF(url) {
+if (!/tiktok/.test(url)) return 'Enlace incorrecto';
+const gettoken = await axios.get("https://tikdown.org/id");
+const $ = cheerio.load(gettoken.data);
+const token = $("#download-form > input[type=hidden]:nth-child(2)").attr( "value" );
+const param = { url: url, _token: token };
+const { data } = await axios.request("https://tikdown.org/getAjax?", { method: "post", data: new URLSearchParams(Object.entries(param)), headers: { "content-type": "application/x-www-form-urlencoded; charset=UTF-8", "user-agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36" }, });
+var getdata = cheerio.load(data.html);
+if (data.status) {
+return { status: true, thumbnail: getdata("img").attr("src"), video: getdata("div.download-links > div:nth-child(1) > a").attr("href"), audio: getdata("div.download-links > div:nth-child(2) > a").attr("href"), }} else
+return { status: false }}
