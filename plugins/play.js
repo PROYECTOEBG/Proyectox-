@@ -131,7 +131,7 @@ await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimet
 await m.react(error)
 await conn.reply(m.chat, '☁ *Ocurrió un fallo*', m, fake) }}}    
 }} catch {
-await m.react(error)
+
 return conn.reply(m.chat, '☁ *Inténtelo de nuevo*', m, fake)}
 
 }
