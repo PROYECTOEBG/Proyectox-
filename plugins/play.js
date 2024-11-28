@@ -8,7 +8,7 @@ var handler = async (m, { conn, command, args, text, usedPrefix }) => {
 
 if (!text) return conn.reply(m.chat, `🌟 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, ${usedPrefix + command} Es un Secreto Plan B`,  m, rcanal)
 
-await m.react(rwait)
+//await m.react(rwait)
 
 try {
   
