@@ -15,7 +15,7 @@ const j = Math.floor(Math.random() * (i + 1));
 }
 try {
   
-await m.react('🕓')
+await message.react('🕓')
 conn.reply(message.chat, '⚡ Enviando resultados...', message)
            
 /*contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
