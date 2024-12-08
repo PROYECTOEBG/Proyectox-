@@ -31,7 +31,7 @@ let selectedResults = searchResults.splice(0, 7)
 for (let result of selectedResults) {
 results.push({
 body: proto.Message.InteractiveMessage.Body.fromObject({ text: null }),
-footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: dev }),
+footer: proto.Message.InteractiveMessage.Footer.fromObject({text:𝙀𝙡𝙞𝙩𝙚𝘽𝙤𝙩𝙂𝙡𝙤𝙗𝙖𝙡-}),
 header: proto.Message.InteractiveMessage.Header.fromObject({
 title: '' + result.title,
 hasMediaAttachment: true,
