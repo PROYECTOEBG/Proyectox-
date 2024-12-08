@@ -15,7 +15,7 @@ const j = Math.floor(Math.random() * (i + 1));
 }
 try {
   
-//await message.react(rwait)
+await m.react('🕓')
 conn.reply(message.chat, '⚡ Enviando resultados...', message)
            
 /*contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
@@ -30,7 +30,7 @@ shuffleArray(searchResults)
 let selectedResults = searchResults.splice(0, 7)
 for (let result of selectedResults) {
 results.push({
-//body: proto.Message.InteractiveMessage.Body.fromObject({ text: null }),
+body: proto.Message.InteractiveMessage.Body.fromObject({ text: null }),
 footer: proto.Message.InteractiveMessage.Footer.fromObject({text:dev}),
 header: proto.Message.InteractiveMessage.Header.fromObject({
 title: '' + result.title,
@@ -47,7 +47,7 @@ deviceListMetadataVersion: 2
 },
 interactiveMessage: proto.Message.InteractiveMessage.fromObject({
 body: proto.Message.InteractiveMessage.Body.create({ text: '✅ Resultado de: ' + text }),
-//footer: proto.Message.InteractiveMessage.Footer.create({ text: '' }),
+footer: proto.Message.InteractiveMessage.Footer.create({ text: '' }),
 header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...results] })})}}
 }, { quoted: message })
