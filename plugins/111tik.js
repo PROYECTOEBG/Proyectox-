@@ -19,7 +19,7 @@ conn.reply(message.chat, '🌸 *Descargando Su Video...*', message, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
 body: dev,
-previewType: 0, thumbnail: ,
+previewType: 0, thumbnail ,
 sourceUrl: channel }}})
 let results = []
 let { data: response } = await axios.get('https://apis-starlights-team.koyeb.app/starlight/tiktoksearch?text=' + text)
