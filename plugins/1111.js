@@ -16,7 +16,7 @@ const j = Math.floor(Math.random() * (i + 1));
 try {
   
 //await message.react(rwait)
-conn.reply(message.chat, '> Enviando resultados...', message)
+conn.reply(message.chat, '⚡ Enviando resultados...', message)
            
 /*contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
@@ -46,7 +46,7 @@ deviceListMetadata: {},
 deviceListMetadataVersion: 2
 },
 interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-body: proto.Message.InteractiveMessage.Body.create({ text: 'Resultado de: ' + text }),
+body: proto.Message.InteractiveMessage.Body.create({ text: '✅ Resultado de' + text }),
 //footer: proto.Message.InteractiveMessage.Footer.create({ text: '' }),
 header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...results] })})}}
