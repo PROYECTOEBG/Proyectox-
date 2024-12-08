@@ -49,7 +49,7 @@ footer: proto.Message.InteractiveMessage.Footer.create({ text: '🍿 Tiktok - Se
 header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...results] })})}}
 }, { quoted: message })
-await m.react('❄️')
+//await message.react(done)
 await conn.relayMessage(message.chat, responseMessage.message, { messageId: responseMessage.key.id })
 } catch (error) {
 await conn.reply(message.chat, error.toString(), message)
