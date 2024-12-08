@@ -2,7 +2,7 @@ import axios from 'axios'
 const {proto, generateWAMessageFromContent, prepareWAMessageMedia, generateWAMessageContent, getDevice} = (await import("@whiskeysockets/baileys")).default
 
 let handler = async (message, { conn, text, usedPrefix, command }) => {
-if (!text) return conn.reply(message.chat, '🌸 *¿Que quieres buscar en tiktok?*', message)
+if (!text) return conn.reply(message.chat, '🌸 *¿Que quieres buscar en tiktok?*', message, rcanal)
 async function createVideoMessage(url) {
 const { videoMessage } = await generateWAMessageContent({ video: { url } }, { upload: conn.waUploadToServer })
 return videoMessage
@@ -14,12 +14,12 @@ const j = Math.floor(Math.random() * (i + 1));
 }
 }
 try {
-//await message.react(❄️)
-conn.reply(message.chat, '🌸 *Descargando Su Video...*', message, {
+await message.react(rwait)
+conn.reply(message.chat, '🚩 *Descargando Su Video...*', message, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: dev,
-previewType: 0, thumbnail: icons ,
+body: wm,
+previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
 let results = []
 let { data: response } = await axios.get('https://apis-starlights-team.koyeb.app/starlight/tiktoksearch?text=' + text)
@@ -29,7 +29,7 @@ let selectedResults = searchResults.splice(0, 7)
 for (let result of selectedResults) {
 results.push({
 body: proto.Message.InteractiveMessage.Body.fromObject({ text: null }),
-footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: dev }),
+footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: textbot }),
 header: proto.Message.InteractiveMessage.Header.fromObject({
 title: '' + result.title,
 hasMediaAttachment: true,
@@ -44,7 +44,7 @@ deviceListMetadata: {},
 deviceListMetadataVersion: 2
 },
 interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-body: proto.Message.InteractiveMessage.Body.create({ text: '🌸 Resultado de: ' + text }),
+body: proto.Message.InteractiveMessage.Body.create({ text: '🚩 Resultado de: ' + text }),
 footer: proto.Message.InteractiveMessage.Footer.create({ text: '🔎 Tiktok - Busquedas' }),
 header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...results] })})}}
@@ -56,8 +56,8 @@ await conn.reply(message.chat, error.toString(), message)
 }}
 
 handler.help = ['tiktoksearch <txt>']
-
+handler.estrellas = 1
+handler.register = true
 handler.tags = ['buscador']
-handler.command = ['tiktoksearch', 'tiktoks']
-
+handler.command = ['tiktoksearch', 'tts', 'tiktoks']
 export default handler
