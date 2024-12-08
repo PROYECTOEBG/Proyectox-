@@ -141,6 +141,9 @@ global.author = `𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓` //"𝙂𝙖𝙩𝙖 𝘿�
 global.textbot = '_*GokuBot By*_ : _Jostin207_ 🌹'
 global.dev = 'Pσɯҽɾҽԃ Bყ Iαɳ 🌙'
 global.vs = "1.7.0"
+const rimg = await response.buffer()
+global.icons = rimg
+
 global.vsJB = "3.0 (Beta)"
 global.gt = "𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓"
 
