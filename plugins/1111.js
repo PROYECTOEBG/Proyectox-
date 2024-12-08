@@ -50,6 +50,7 @@ header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: fal
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...results] })})}}
 }, { quoted: message })
 //await message.react(done)
+  conn.reply(message.chat, '🚩 *Descargando Su Video...*', message, {
 await conn.relayMessage(message.chat, responseMessage.message, { messageId: responseMessage.key.id })
 } catch (error) {
 await conn.reply(message.chat, error.toString(), message)
