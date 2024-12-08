@@ -14,6 +14,7 @@ const j = Math.floor(Math.random() * (i + 1));
 }
 }
 try {
+  await m.react('⚡')
 //await message.react(rwait)
 //conn.reply(message.chat, '🚩 *Descargando Su Video...*', message 
            
