@@ -139,6 +139,7 @@ global.author = `𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓` //"𝙂𝙖𝙩𝙖 𝘿�
 // MANTENGA ESTO SIN MODIFICAR, NOS ESFORZAMOS A DIARIO POR OFRECERLES UN BOT PARA LA COMUNIDAD, SEA AGRADECIDO 😉
 // [EN] > BOT VERSION INFORMATION, PLEASE KEEP THIS UNCHANGED, WE STRIVE DAILY TO PROVIDE YOU WITH A BOT FOR THE COMMUNITY, BE GRATEFUL
 global.textbot = '_*GokuBot By*_ : _Jostin207_ 🌹'
+global.dev = 'Pσɯҽɾҽԃ Bყ Iαɳ 🌙'
 global.vs = "1.7.0"
 global.vsJB = "3.0 (Beta)"
 global.gt = "𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓"
