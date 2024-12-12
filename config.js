@@ -131,8 +131,8 @@ global.desc2 = '' // Add long description (90 caractres max) (Este parámetro se
 global.country = '' // Add country, example: 🇪🇨
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
-global.packname = `𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓` //"𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 🐈"
-global.author = `𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓` //"𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨"
+global.packname = `𝘽𝙤𝙡𝙞𝙡𝙡𝙤 𝘽𝙤𝙩 🥖` //"𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 🐈"
+global.author = `𝘽𝙤𝙡𝙞𝙡𝙡𝙤 𝘽𝙤𝙩 🥖` //"𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨"
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 // [ES] > INFORMACIÓN DE VERSIONES DEL BOT, POR FAVOR 
@@ -145,7 +145,7 @@ global.vs = "1.7.0"
 
 
 global.vsJB = "3.0 (Beta)"
-global.gt = "𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓"
+global.gt = "𝘽𝙤𝙡𝙞𝙡𝙡𝙤 𝘽𝙤𝙩 🥖"
 
 fetchDataAndProcess().catch(error => console.error('Ocurrió un error:', error))
 
@@ -173,8 +173,8 @@ global.eg = '*EXITO*\n\n'
 global.exito = eg
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
-global.wm = "𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓"
-global.igfg = "𝙋𝙧𝙤𝙮𝙚𝙘𝙩𝙤𝙓"
+global.wm = "𝘽𝙤𝙡𝙞𝙡𝙡𝙤 𝘽𝙤𝙩 🥖"
+global.igfg = "𝘽𝙤𝙡𝙞𝙡𝙡𝙤 𝘽𝙤𝙩 🥖"
 global.nomorown = "593993370003"
 global.pdoc = ["application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/msword", "application/pdf", "text/rtf"]
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
@@ -433,12 +433,12 @@ else return emotttt[results[0][0]];
 
 // IDs de canales
 global.ch = {
-ch1: '120363357113516650@newsletter',
-ch2: '120363357113516650@newsletter',
-ch3: '120363357113516650@newsletter',
-ch4: '120363357113516650@newsletter',
-ch5: '120363357113516650@newsletter',
-ch6: '120363357113516650@newsletter',
+ch1: '',
+ch2: '',
+ch3: '',
+ch4: '',
+ch5: '',
+ch6: '',
 }
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
