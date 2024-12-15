@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
  *🝤.- 𝙻𝚒𝚗𝚔:* ${videoUrl}\n
 *🝩.- 𝙴𝚗𝚟𝚒𝚊𝚗𝚍𝚘 𝚟𝚒𝚍𝚎𝚘, 𝚊𝚐𝚞𝚊𝚝𝚊 𝚞𝚗 𝚖𝚘𝚖𝚎𝚗𝚝𝚘...*
 
-> ৎ୭࠭͢𝒴𝓊𝓀𝒾_𝒮𝓊𝑜𝓊-𝐵𝑜𝓉𝐭ⷭ𓆪͟͞ `;
+`;
 
     // Enviar el mensaje informativo con la imagen
     await conn.sendMessage(m.chat, { 
