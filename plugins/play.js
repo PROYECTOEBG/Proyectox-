@@ -12,8 +12,7 @@ if (!text) throw `Que Busca\n*${usedPrefix + command} Billie Eilish - Bellyache*
 const yt_play = await search(args.join(' '));
 const ytplay2 = await yts(text);
 const texto1 = `01:27 ━━━━━⬤──── 2:56
-*⇄ㅤ   ◁   ㅤ  ❚❚ㅤ     ▷ㅤ   ↻*
-𝙀𝙡𝙞𝙩𝙚 𝘽𝙤𝙩 𝙂𝙡𝙤𝙗𝙖𝙡 `.trim();
+*⇄ㅤ   ◁   ㅤ  ❚❚ㅤ     ▷ㅤ   ↻*`.trim();
 
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null);
 try {
