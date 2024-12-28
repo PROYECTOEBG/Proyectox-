@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-if (!text) return conn.reply(m.chat, `INGRESE EL NOMBRE DE ALGUNA CANCION`, m, rcanal)
+if (!text) return conn.reply(m.chat, `INGRESE EL NOMBRE DE ALGUNA CANCION`, m)
 
 await m.react('🕒');
 try {
@@ -22,7 +22,7 @@ let txt = `*\`- M U S I C -\`*\n\n`;
     txt += `✩  *Calidad* : ${quality}\n`;
     txt += `> 🚩 *${textbot}*`
 
-await conn.sendFile(m.chat, image, 'thumbnail.jpg', txt, m, null, rcanal);
+await conn.sendFile(m.chat, image, 'thumbnail.jpg', txt, m, null);
 await conn.sendMessage(m.chat, { audio: audio, fileName: `${json[0].title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m })
 
 await m.react('✅');
