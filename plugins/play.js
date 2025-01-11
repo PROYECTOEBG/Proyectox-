@@ -18,12 +18,8 @@ additionalText = ''
 } else if (command === 'play8') {
 additionalText = 'video 🎥'}
 await conn.sendMessage(m.chat, {
-text: `
-┏━                                             ━┓
-              P r o y e c t o X 
-              ━━━━●───────── 
-                 Y o u t u b e  
-┗━                                             ━┛`, 
+text: `⇄ <<     ⅠⅠ     >> ↻
+> ProyectoX`, 
 contextInfo: {
 externalAdReply: {
 title: yt_play[0].title,
