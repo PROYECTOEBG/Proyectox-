@@ -19,15 +19,11 @@ additionalText = ''
 additionalText = 'video 🎥'}
 await conn.sendMessage(m.chat, {
 text: `
-┏━                                           ━┓
-
-:rabbit: ;– N a m e
-
-———————————————
-
-150118        05:01
-
-┗━                                         ━┛`, 
+┏━                  ━┓
+   P r o y e c t o X
+    ———————————————
+  150118        05:01
+┗━                  ━┛`, 
 contextInfo: {
 externalAdReply: {
 title: yt_play[0].title,
