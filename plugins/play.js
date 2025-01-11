@@ -13,12 +13,12 @@ if (command === 'play') {
 additionalText = '𝘼𝙐𝘿𝙄𝙊 🎧'
 } else if (command === 'play2') {
 additionalText = '𝙑𝙄𝘿𝙀𝙊 🎥'}
-let captionvid = `» 𝙏𝙄𝙏𝙐𝙇𝙊 : ${yt_play[0].title}
+/*let captionvid = `» 𝙏𝙄𝙏𝙐𝙇𝙊 : ${yt_play[0].title}
 » 𝙋𝙐𝘽𝙇𝙄𝘾𝘼𝘿𝙊 : ${yt_play[0].ago}
 » 𝘿𝙐𝙍𝘼𝘾𝙄𝙊𝙉 : ${secondString(yt_play[0].duration.seconds)}
 » 𝙑𝙄𝙎𝙏𝘼𝙎 : ${MilesNumber(yt_play[0].views)}
 » 𝙐𝙍𝙇 : ${yt_play[0].url}
-» 𝙀𝙉𝙑𝙄𝘼𝙉𝘿𝙊 ${additionalText} 𝘼𝙂𝙐𝘼𝙍𝘿𝙀 𝙐𝙉 𝙈𝙊𝙈𝙀𝙉𝙏𝙊`  
+» 𝙀𝙉𝙑𝙄𝘼𝙉𝘿𝙊 ${additionalText} 𝘼𝙂𝙐𝘼𝙍𝘿𝙀 𝙐𝙉 𝙈𝙊𝙈𝙀𝙉𝙏𝙊`  */
 await conn.sendMessage(m.chat, {
 text: captionvid,
 contextInfo: {
