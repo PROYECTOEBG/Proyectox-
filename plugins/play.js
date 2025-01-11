@@ -20,7 +20,8 @@ additionalText = 'video 🎥'}
 await conn.sendMessage(m.chat, {
 text: `
 ┏━                                             ━┓
-              P r o y e c t o X 1:30━━━━●───────── 3:17
+              P r o y e c t o X 
+              ━━━━●───────── 
                  Y o u t u b e  
 ┗━                                             ━┛`, 
 contextInfo: {
