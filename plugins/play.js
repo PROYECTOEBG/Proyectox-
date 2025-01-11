@@ -18,7 +18,7 @@ additionalText = ''
 } else if (command === 'play8') {
 additionalText = 'video 🎥'}
 await conn.sendMessage(m.chat, {
-text: `⇄ <<     ⅠⅠ     >> ↻
+text: `⇄          <<            ⅠⅠ              >>        ↻
 > ProyectoX`, 
 contextInfo: {
 externalAdReply: {
