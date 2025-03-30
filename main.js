@@ -1,4 +1,4 @@
-/* ------------------------------------------------*/
+/* --------------------------------------------------*/
 /*PARAMETRO PARA CREAR SUBCARPETAS LINEA 381 HASTA LA LINEA 483*/
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
